@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,7 @@
             <a href="#" class="header-link">Отзывы</a>
         </div>
         <div class="header-right">
-            <a href="login.html" class="header-link">Вход</a>
+            <a href="{% url "users:login" %}" class="header-link">Вход</a>
         </div>
     </header>
 <!-- Контент -->
