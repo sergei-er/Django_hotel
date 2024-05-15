@@ -10,13 +10,19 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" action="login_handler.php" method="POST">
+        <form action="{% url "user:login" %}" method="post">
+            {% csrf_token %}
+            {{form}}
+
+            {% comment "" %}
             <h2>Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            {% endcomment %}
+            <button type="submit">Войти</button>
+            
             <p><a href="{% url "users:registration" %}" class="have-account-btn">Нет аккаунта?</a></p>
         </form>
         
