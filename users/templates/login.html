@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="{% static "../static/deps/css/styles.css" %}">
 </head>
 <body>
+    <header class="header">
+        <div class="header-left">
+            <a href="{% url "main:index" %}" class="header-link">Главная</a>
+            <a href="#" class="header-link">Номера</a>
+            <a href="#" class="header-link">Бронирование</a>
+            <a href="#" class="header-link">Отзывы</a>
+        </div>
+    </header>
     <div class="container">
         <form action="{% url "user:login" %}" method="post">
             {% csrf_token %}
@@ -27,5 +35,10 @@
         </form>
         
     </div>
+    <footer class="py-4 bg-dark">
+        <div class="footer">
+            <p class="m-0 text-center text-white">Copyright &copy; SSTU 2024</p>
+        </div>
+</footer>
 </body>
 </html>
