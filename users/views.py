@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import auth
 from users.forms import UserLoginForm, UserRegistrationForm
 from django.http import HttpResponseRedirect
@@ -29,7 +29,9 @@ def registration(request):
         form = UserRegistrationForm(data = request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('user:login'))
+            user = form.instance
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse('main:index'))
     else:
         form = UserRegistrationForm()
 
@@ -41,4 +43,5 @@ def registration(request):
 
 
 def logout(request):
-    return HttpResponseRedirect(reverse('main:index'))
+    auth.logout(request)
+    return redirect('main:index')
