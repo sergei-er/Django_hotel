@@ -4,5 +4,5 @@ from django.http import HttpResponse
 
 
 
-def hotel_numbers(request):
-    return render(request, 'hotel_numbers.html')
+def hotel_rooms(request):
+    return render(request, 'numbers.html')
