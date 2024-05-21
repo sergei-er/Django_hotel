@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
-    <link rel="stylesheet" href="{% static "../static/deps/css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "../static/deps/css/numberstyles.css" %}">
     <title>Hotel</title>
 </head>
 <body>
@@ -30,31 +30,20 @@
         <div class="row mt-1">
             <div class="col-lg-10">
                     <!-- Контент на странице -->
-                    <div class="rooms-container">
+                    
                         <h1>Гостиничные номера</h1>
-                
+                        {% for room in rooms %}
                         <div class="room">
-                            <h2>Стандартный номер</h2>
-                            <p>Уютный номер с одной кроватью, кондиционером и бесплатным Wi-Fi.</p>
+                            <img src="{{ room.photo.url }}" alt="Фото номера {{ room.room_number }}" >
+                            <h2>Номер {{ room.room_number }}</h2>
+                            <p>Тип: {{ room.get_room_type_display }}</p>
+                            <p>Вместимость: {{ room.room_capacity }}</p>
+                            <p>Цена за ночь: {{ room.room_price }}</p>
                         </div>
-                
-                        <div class="room">
-                            <h2>Люкс</h2>
-                            <p>Просторный номер с отдельной гостиной зоной, мини-баром и панорамным видом на город.</p>
-                        </div>
-                
-                        <div class="room">
-                            <h2>Семейный номер</h2>
-                            <p>Номер с двумя спальнями, удобный для проживания всей семьей. Оснащен кухонной зоной и игровой комнатой для детей.</p>
-                        </div>
-                    </div>
+                        {% endfor %}
+                    
             </div>
         </div>
     </div>
-<footer class="py-4 bg-dark">
-        <div class="footer">
-            <p class="m-0 text-center text-white">Copyright &copy; SSTU 2024</p>
-        </div>
-</footer>
 </body>
 </html>

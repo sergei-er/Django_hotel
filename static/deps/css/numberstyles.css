@@ -31,13 +31,9 @@ body {
     margin-right: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
+
+
+
 .room-list {
     display: flex;
     flex-wrap: wrap;
@@ -69,49 +65,3 @@ body {
 .room p {
     margin: 10px 0;
 }
-
-.registration-block {
-    width: 30%;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
-
-.sections {
-    width: 65%;
-}
-
-.section {
-    margin-bottom: 40px;
-}
-
-.section h2 {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-}
-
-.section-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.block {
-    width: calc(25% - 20px);
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.footer {
-    position: fixed;
-    color: #fff;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    background-color: #343a40;
-    padding: 5px 0;
-  }
