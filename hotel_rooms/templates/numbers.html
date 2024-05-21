@@ -28,9 +28,9 @@
 <!-- Контент -->
     <div class="container">
         <div class="row mt-1">
-            <div class="col-lg-10">
+            <div class="room-list">
                     <!-- Контент на странице -->
-                    
+
                         <h1>Гостиничные номера</h1>
                         {% for room in rooms %}
                         <div class="room">
@@ -41,7 +41,7 @@
                             <p>Цена за ночь: {{ room.room_price }}</p>
                         </div>
                         {% endfor %}
-                    
+                 
             </div>
         </div>
     </div>

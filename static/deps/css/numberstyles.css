@@ -31,15 +31,12 @@ body {
     margin-right: 0;
 }
 
-
-
-
 .room-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
+    gap: 20px;
 }
 
 .room {
@@ -47,8 +44,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 300px;
-    text-align: center;
+    width: calc(33.333% - 40px); /* To ensure three rooms per row with a gap of 20px */
+    box-sizing: border-box;
 }
 
 .room img {
