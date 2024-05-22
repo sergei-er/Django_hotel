@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('main.urls', namespace='main')),
     path('user/', include('users.urls', namespace='user')),
     path('hotel_rooms/', include('hotel_rooms.urls', namespace='hotel_room')),
+    path('booking/', include('booking.urls', namespace='booking')),
 ]
 
 if settings.DEBUG:
