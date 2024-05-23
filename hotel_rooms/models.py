@@ -16,8 +16,8 @@ class HotelRoom(models.Model):
 
     class Meta:
         db_table = 'hotel_rooms'
-        verbose_name = 'Гостиничныt номера'
-        verbose_name_plural = 'Гостиничныt номера'
+        verbose_name = 'Гостиничные номера'
+        verbose_name_plural = 'Гостиничные номера'
 
     def __str__(self):
         return f"Room {self.room_number} - {self.get_room_type_display()}"

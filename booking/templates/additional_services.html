@@ -1,9 +1,10 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Booking</title>
+    <title>Additional_services</title>
     <link rel="stylesheet" href="{% static "../static/deps/css/booking.css" %}">
 </head>
 <body>
@@ -23,32 +24,15 @@
             
         </div>
     </header>
+<body>
     <div class="container">
-        <h2>Бронирование</h2>
-        <form method="post">
-            {% csrf_token %}
+        <h1>Дополнительные услуги</h1>
+        {% for service in services %}
             <div class="form-group">
-                Комнаты
-                {{ form.room }}
+                <div class="service-name">{{ service.service_name }}</div>
+                <div class="service-price">Цена: {{ service.service_price }} руб.</div>
             </div>
-            <div class="form-group">
-                Заезд
-                {{ form.check_in }}
-            </div>
-            <div class="form-group">
-                Выезд
-                {{ form.check_out }}
-            </div>
-            <div class="form-group">
-                <a href="{% url "booking:additional_services" %}">Дополнительные услуги</a>
-            </div>
-            <div class="form-group">
-                {{ form.additional_services }}
-            </div>
-            <div class="form-group">
-                <button type="submit">Забронировать</button>
-            </div>
-        </form>
-
+        {% endfor %}
+    </div>
 </body>
 </html>
