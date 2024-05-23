@@ -1,14 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel</title>
-    <link rel="stylesheet" href="{% static "../static/deps/css/styles.css" %}">
-    <title>Hotel</title>
+    <title>Добавить отзыв</title>
+    <link rel="stylesheet" type="text/css" href="{% static "../static/deps/css/reviews.css" %}">
 </head>
+
 <body>
     <header class="header">
         <div class="header-left">
@@ -26,19 +25,22 @@
             
         </div>
     </header>
-<!-- Контент -->
     <div class="container">
-        <div class="row mt-1">
-            <div class="col-lg-10">
-                    <!-- Контент на странице -->
-                <h1 class="mt-5 pt-5"><strong>AI Гостиница</strong></h1>
+        <h1>Отзывы</h1>
+        <a href="{% url 'reviews:add_review' %}" class="btn btn-primary">Добавить отзыв</a>
+        {% for review in reviews %}
+            <div class="review-item">
+                <div class="review-meta">
+                    <strong>{{ review.user.username }}</strong> написал:
+                </div>
+                <div class="review-text">
+                    {{ review.review_text }}
+                </div>
+                <div class="review-meta">
+                    {{ review.created_at }}
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-<footer class="py-4 bg-dark">
-        <div class="footer">
-            <p class="m-0 text-center text-white">Copyright &copy; SSTU 2024</p>
-        </div>
-</footer>
 </body>
 </html>

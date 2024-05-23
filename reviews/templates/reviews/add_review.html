@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить отзыв</title>
+    <link rel="stylesheet" type="text/css" href="{% static "../static/deps/css/reviews.css" %}">
+</head>
+<header class="header">
+    <div class="header-left">
+        <a href="{% url "main:index" %}" class="header-link">Главная</a>
+        <a href="{% url "hotel_rooms:numbers" %}" class="header-link">Номера</a>
+        <a href="{% url "booking:booking" %}" class="header-link">Бронирование</a>
+        <a href="{% url "reviews:review_list" %}" class="header-link">Отзывы</a>
+    </div>
+    <div class="header-right">
+    {% if user.is_authenticated %}
+        <a href="{% url 'users:logout' %}" class="header-link" >Выйти</a>
+    {% else %}
+        <a href="{% url "users:login" %}" class="header-link">Войти</a>
+    {% endif %}
+        
+    </div>
+</header>
+<body>
+    <div class="container">
+        <h1>Добавить отзыв</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
