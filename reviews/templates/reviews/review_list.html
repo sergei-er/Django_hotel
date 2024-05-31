@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Добавить отзыв</title>
     <link rel="stylesheet" type="text/css" href="{% static "../static/deps/css/reviews.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "../static/deps/css/ava.css" %}">
 </head>
 
 <body>
@@ -31,6 +32,9 @@
         {% for review in reviews %}
             <div class="review-item">
                 <div class="review-meta">
+                    {% if review.user.image %}
+                        <img src="{{ review.user.image.url }}" alt="Avatar" class="avatar">
+                    {% endif %}
                     <strong>{{ review.user.username }}</strong> написал:
                 </div>
                 <div class="review-text">
