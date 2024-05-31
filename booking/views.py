@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import AdditionalService, Booking
 from .forms import BookingForm
+from django.utils import timezone 
 
 from django.contrib.auth.decorators import login_required
 
