@@ -13,7 +13,7 @@
             <a href="{% url "main:index" %}" class="header-link">Главная</a>
             <a href="{% url "hotel_rooms:numbers" %}" class="header-link">Номера</a>
             <a href="{% url "booking:booking" %}" class="header-link">Бронирование</a>
-            <a href="#" class="header-link">Отзывы</a>
+            <a href="{% url "reviews:review_list" %}" class="header-link">Отзывы</a>
         </div>
         <div class="header-right">
         {% if user.is_authenticated %}

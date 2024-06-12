@@ -23,7 +23,7 @@ def booking(request):
 
             # Вычисляем стоимость дополнительных услуг
             additional_services = form.cleaned_data['additional_services']
-            additional_services_total_price = sum(service.service_price for service in additional_services)
+            additional_services_total_price = sum(service.price for service in additional_services)
 
             # Общая стоимость
             total_price = room_total_price + additional_services_total_price
