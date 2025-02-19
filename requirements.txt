@@ -1,0 +1,6 @@
+Django>=4.0  # Основной фреймворк
+psycopg2-binary  # Драйвер для PostgreSQL
+python-dotenv  # Для работы с .env файлами (если используется)
+django-environ  # Альтернатива для переменных окружения (если используется)
+djangorestframework  # Если используется Django REST Framework
+Pillow  # Если проект работает с изображениями
