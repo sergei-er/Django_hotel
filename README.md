@@ -21,9 +21,6 @@ cd Django_hotel
 python -m venv venv
 venv\Scripts\activate
 
-python3 -m venv venv
-source venv/bin/activate
-
 pip install -r requirements.txt
 ```
 Убедитесь, что PostgreSQL установлен и запущен на вашем компьютере. Если PostgreSQL не установлен, следуйте официальным инструкциям по установке для вашей операционной системы
